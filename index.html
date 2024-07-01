@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boliglånskalkulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Embrik`s Utleiekalkulator</h1>
+        <div class="content">
+            <form id="loanForm">
+                <label for="housingPrice">Boligpris (NOK):</label>
+                <input type="number" id="housingPrice" required>
+
+                <label for="monthlyFee">Felleskostnader per måned (NOK):</label>
+                <input type="number" id="monthlyFee" required>
+
+                <label for="electricity">Strøm per måned (NOK):</label>
+                <input type="number" id="electricity" required>
+
+                <label for="municipalFees">Kommunale avgifter per år (NOK):</label>
+                <input type="number" id="municipalFees" required>
+
+                <label for="internet">Internett per måned (NOK):</label>
+                <input type="number" id="internet" required>
+
+                <label for="insurance">Forsikring per måned (NOK):</label>
+                <input type="number" id="insurance" required>
+
+                <label for="rentalCosts">Utleiekostnader per måned (NOK):</label>
+                <input type="number" id="rentalCosts" required>
+
+                <label for="maintenanceCosts">Vedlikeholdskostnader per år (NOK):</label>
+                <input type="number" id="maintenanceCosts" required>
+
+                <label for="interestRate">Rente (%) :</label>
+                <input type="number" id="interestRate" step="0.01" required>
+
+                <label for="loanTerm">Lånetid (år):</label>
+                <input type="number" id="loanTerm" required>
+
+                <label for="income">Månedlig inntekt (NOK):</label>
+                <input type="number" id="income" required>
+
+                <button type="button" id="calculateButton">Beregn</button>
+            </form>
+            <div class="table-container">
+                <table id="resultTable">
+                    <thead>
+                        <tr>
+                            <th>Beskrivelse</th>
+                            <th>Beløp (NOK)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Månedlig boliglånsbetaling</td>
+                            <td id="monthlyPaymentCell"></td>
+                        </tr>
+                        <tr>
+                            <td>Månedlig inntekt</td>
+                            <td id="incomeCell"></td>
+                        </tr>
+                        <tr>
+                            <td>Resultat før skatt og avdrag</td>
+                            <td id="totalMonthlyCostBeforeLoanCell"></td>
+                        </tr>
+                        <tr>
+                            <td>Skatt (22%)</td>
+                            <td id="taxDeductionCell"></td>
+                        </tr>
+                        <tr>
+                            <td>Totale månedlige utgifter etter skatt</td>
+                            <td id="totalMonthlyCostAfterTaxCell"></td>
+                        </tr>
+                   
+                        <tr>
+                            <td>Månedlig cashflow</td>
+                            <td id="cashflowCell"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="futureValueTable">
+                    <thead>
+                        <tr>
+                            <th>År</th>
+                            <th>Boligverdi (NOK)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3 år</td>
+                            <td id="value3YearsCell"></td>
+                        </tr>
+                        <tr>
+                            <td>5 år</td>
+                            <td id="value5YearsCell"></td>
+                        </tr>
+                        <tr>
+                            <td>10 år</td>
+                            <td id="value10YearsCell"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
